@@ -1,0 +1,121 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="comments-element">
+    <style>
+      :host {
+        display: block;
+      }
+            a {
+              text-decoration:none;
+                color: inherit;
+              background-color: inherit;
+           }
+        
+        .Page_header {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-bottom: 45px;
+            margin-top: 12px;
+            color: #424242;
+        }
+        
+        .Profile_avatar {
+            border-radius: 50%;
+            max-width: 100px;
+            max-height: 100px;
+            border-style: solid;
+            border-color: #424242;
+            border-width: 2px;
+        }
+        
+        .Page_name {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 40px;
+        }
+       .Page_content {
+            display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           justify-content: center;
+           color: #424242;
+       }
+        
+        .poopy-header {
+         background-color: #E9E9E9;
+            height: auto;
+            width: 500px;
+            max-width: 100%;
+        }
+         .poopy-section {
+         background-color: #424242;
+            height: 300px;
+            width: 500px;
+             max-width: 100%;
+        }
+         .poopy-footer {
+         background-color: #E9E9E9;
+            height: auto;
+            width: 500px;
+            max-width: 100%; 
+        }
+
+    </style>
+  <template>
+                <div class="Page_header">
+                    <a href="http://facebook.com/caleblol/"><img class="Profile_avatar" src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11201839_885374401524370_937423113788029436_n.jpg?oh=9712c925d6a45a675840d7d243c83977&oe=55E90023"></a>
+                    <span class="flex"></span>                    
+                    <a class="Page_name" style="margin-right: 130px;"><h1>Comments</h1></a>
+                    <span class="flex"></span>
+                </div>
+      
+                <div class="Page_content">
+                    <div class="poopy-container">
+                        <div class="poopy-header">
+                                <paper-icon-button class="person-icon" icon="social:person"></paper-icon-button>
+                        </div>
+                        <div class="poopy-section horizontal layout center center-justified">
+                            <iron-icon class="poopy-icon" style="color: black; width: 110px; height: 110px;"icon="image:crop-original"></iron-icon>
+                        </div>
+                        <div class="poopy-footer horizontal layout center end-justified">
+                                
+                            <paper-button raised>Upload</paper-button>
+
+                        </div>
+                    </div>
+                    
+<!--
+                    <paper-input label="Name" style="width: 500px;"></paper-input>
+                    <paper-input label="Comment" style="width: 500px;"></paper-input>
+                    <paper-button raised style="background-color: #424242; color: #E9E9E9; width: 500px;">Submit</paper-button>
+-->
+      </div>
+    </template>
+
+</dom-module>
+  <script>
+    (function () {
+      Polymer({
+        is: 'comments-element',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          }
+        },
+        ready: function() {
+            
+        }
+      });
+    })();
+  </script>

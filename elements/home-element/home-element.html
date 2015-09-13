@@ -1,0 +1,153 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="home-element">
+    <style>
+      :host {
+        display: block;
+      }
+            a {
+              text-decoration:none;
+                color: inherit;
+              background-color: inherit;
+           }
+        
+            .Profile_avatar {
+             border-radius: 50%;
+                        border-style: solid;
+            border-color: #424242;
+            border-width: 2px;
+            }
+            .Page_header {
+                margin-bottom: 45px;
+                margin-top: 12px;
+                display: flex;
+                flex-direction: row;
+/*                margin-right: 45px;*/
+                color: #424242;
+            }
+            .Page_name {
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: 35px;
+                margin-right: 35px;
+            }
+            .Page_content {
+             display: flex;
+                flex-direction: column;
+                
+            }
+            .Page_tube {
+                margin-bottom: 45px;
+              margin-left: auto;
+                margin-right: auto;
+                max-width: 100%;
+                
+            }
+        
+        
+        .flex-item {
+/*            background: red;*/
+            margin: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            flex: 1 0 auto;
+            height:auto;
+            
+        }
+        .flex-item:before {
+            content:'';
+            float:left;
+            padding-top:100%;
+        }
+            .flex-image {
+                max-width: 100%;
+                max-height: 315px;
+                -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+            }
+        .flex-image:hover {
+
+        }
+
+       .g-ytsubscribe {
+        margin-top: auto;
+           
+       }
+        
+    </style>
+  <template>
+                <div class="Page_header horizontal layout center start-justified">
+                    <a href="https://www.youtube.com/channel/UCPnAUCBebZvAFkVyqpKFK8g">
+                        <img class="Profile_avatar" src="https://yt3.ggpht.com/-Za-fMDATIOo/AAAAAAAAAAI/AAAAAAAAAAA/52BRlAXgKIs/s100-c-k-no/photo.jpg"></a>
+                    <span class="flex"></span>
+                    <a class="Page_name"><h1>oweeet</h1></a>
+                    
+                    <script src="https://apis.google.com/js/platform.js"></script>
+                                    <div class="flex"><span></span></div>
+
+                    <div class="g-ytsubscribe" data-channel="oweeet" data-layout="default" data-count="default"></div>
+                    <a class="Page_out" href="https://www.youtube.com/channel/UCPnAUCBebZvAFkVyqpKFK8g"><paper-icon-button icon="open-in-new"></paper-icon-button></a>
+                </div>
+                
+                <div class="Page_content">
+                    
+                    
+                    <google-youtube
+                          class="Page_tube"            
+                          video-id="5Cz4gRz0JEk"
+                          height="495px"
+                          width="880px"
+                          rel="0"
+                          start="0"
+                          autoplay="0">
+                    </google-youtube>
+                    
+                   <google-youtube
+                          class="Page_tube"            
+                          video-id="MxP4Cd5CAoE"
+                          height="495px"
+                          width="880px"
+                          rel="0"
+                          start="0"
+                          autoplay="0">
+                    </google-youtube>
+                </div>
+      
+<!--
+                <div class="flex-item">
+                    <iron-image class="flex-image" src="http://lorempixel.com/1280/720"></iron-image>
+                    <iron-image class="flex-image" src="http://lorempixel.com/300/451"></iron-image>
+                    <iron-image class="flex-image" src="http://lorempixel.com/300/451"></iron-image>
+                </div>
+-->
+           
+  </template>
+
+</dom-module>
+  <script>
+    (function () {
+      Polymer({
+        is: 'home-element',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          }
+        },
+        ready: function() {
+
+        }
+      });
+    })();
+  </script>

@@ -1,0 +1,118 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="gallery-element">
+    <style>
+      :host {
+          display: block;
+      }
+       a {
+            color: inherit;
+            text-decoration: none;
+       }
+        .ProfilePage_header {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-bottom: 45px;
+            margin-top: 12px;
+            color: #424242;
+        }
+        .ProfilePage_avatar {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            border-style: solid;
+            border-color: #424242;
+            border-width: 2px;
+        }
+        .ProfilePage_name {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 40px;
+        }
+        .feedclass {
+            display: block;
+/*            background: red;*/
+            margin: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            flex: 1 0 auto;
+            height:auto;
+            max-width: 100%;
+        }
+        .Page_out{
+         margin-left: 50px;   
+        }
+        
+    </style>
+    
+  <template>
+      <div class="ProfilePage_header horizontal layout center start-justified">
+            
+                <a href="https://instagram.com/tecm0/"><img class="ProfilePage_avatar" src="https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11356874_115181872153936_2014282805_a.jpg"></img></a>
+              
+    <span class="flex"></span>  
+      <a class="ProfilePage_name"><h2>tecm0</h2></a>
+<span class="flex"></span> 
+            <a class="Page_out" href="https://instagram.com/tecm0/"><paper-icon-button icon="open-in-new"></paper-icon-button></a>
+
+      </div>
+        <div class="feedclass" id="instafeed"></div>
+        <style>
+           .instapic {
+               margin-right: 5px;
+               border-style: solid;
+               border-color: #424242;
+               border-width: 2px;
+            }
+            .instapic:hover {
+                
+            }
+        </style>
+  </template>
+
+</dom-module>
+
+  <script>
+    (function () {
+      Polymer({
+        is: 'gallery-element',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          }
+        },
+        ready: function() {
+
+        }
+      });
+    })();
+  </script>
+
+<script type="text/javascript">
+    var userFeed = new Instafeed({
+        get: 'user',
+//        get: 'tagged',
+//        tagName: 'cat',
+        limit: 9,
+        userId: 696525920,
+        resolution: 'low_resolution',
+//        resolution: 'low_resolution',
+        accessToken: '696525920.467ede5.5640c045709a4f17886d33aaa5f6852a',
+        template: '<a href="{{link}}"><img class="instapic" src="{{image}}" /></a>'
+
+    });
+    userFeed.run();
+</script>
